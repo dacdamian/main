@@ -1,0 +1,291 @@
+<html lang="pl_PL">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formularz rejestracyjny html</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="bootstrap/js/bootstrap.js" language=javascript type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+	
+	<hr /><h3><center>Zadania od andrzeja - Rejestracja.</center></h3>
+	
+	<div class="container">
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+  <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Rozwiń nawigację</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     <ul class="nav navbar-nav navbar-left">
+		<li><a href="index.php" class="navbar-link">Logowanie</a></li>
+		
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href="nowe_haslo.php" class="navbar-link">Generuj hasło</a></li>
+        <li><a href="rejestracja.html" class="navbar-link">Rejestracja</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>
+</div>
+	
+	<form enctype="multipart/form-data" class="form-horizontal" action="rejestracja.php" method="POST">
+<fieldset>
+
+
+<legend><center>Formularz rejestracyjny</center></legend>
+
+<form>
+<div class="container">
+<div class="form-group" id="frmCheckUsername">
+  <label class="col-md-4 control-label" for="Login">Login</label>  
+  <div class="col-md-4">
+  <input id="login" name="login" type="text" placeholder="login" class="form-control input-md" required="" onBlur="checkAvailability()">
+  <span class="komunikat" id="user-availability-status"></span>
+ 
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="haslo">Haslo</label>
+  <div class="col-md-4">
+    <input id="haslo" name="haslo" type="password" placeholder="Haslo" class="form-control input-md" required="">
+    <span class="komunikat"></span>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="haslo2">Powtorz haslo</label>
+  <div class="col-md-4">
+    <input id="haslo2" name="haslo2" type="password" placeholder="wpisz ponownie haslo" class="form-control input-md" required="">
+    <span class="komunikat"></span>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="imie">Imie</label>  
+  <div class="col-md-4">
+  <input id="imie" name="imie" type="text" placeholder="imie" class="form-control input-md" required="">
+  <span class="komunikat"></span>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="nazwisko">Nazwisko</label>  
+  <div class="col-md-4">
+  <input id="nazwisko" name="nazwisko" type="text" placeholder="nazwisko" class="form-control input-md" required="">
+  <span class="komunikat"></span>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="data_urodzenia">Data urodzenia</label>  
+  <div class="col-md-4">
+  <input id="data_urodzenia" name="data_urodzenia" type="date" placeholder="data" class="form-control input-md" required="" value="rrrr-mm-dd">
+  <span class="komunikat"></span>  
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="adres">Adres</label>  
+  <div class="col-md-4">
+  <input id="adres" name="adres" type="text" placeholder="adres" class="form-control input-md" required="">
+  <span class="komunikat"></span>  
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="telefon">Telefon kontaktowy</label>  
+  <div class="col-md-4">
+  <input id="telefon" name="telefon" type="text" placeholder="telefon" class="form-control input-md" required="" value="000-000-000">
+  <span class="komunikat"></span>  
+  </div>
+</div>
+
+
+<div class="form-group" id="frmCheckEmail">
+  <label class="col-md-4 control-label" for="email">E-mail</label>  
+  <div class="col-md-4">
+  <input id="email" name="email" type="text" placeholder="email" class="form-control input-md" required="" onBlur="checkAvailability()">
+  <span class="komunikat" id="email-availability-status"></span>  
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="zdjecie">Zdjęcie</label>  
+  <div class="col-md-4">
+  <input id="zdjecie" name="zdjecie" type="file" placeholder="zdjecie" class="form-control input-md">
+  <span class="komunikat"></span>  
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="submit"></label>
+  <div class="col-md-4">
+    <button id="submit" name="submit" class="btn btn-success">Zarejestruj</button>
+  </div>
+</div>
+
+</fieldset>
+
+</form>
+<script>//walidacje
+$(document).ready(function() {
+ 
+	$('#login').on('blur', function() {
+            var input = $(this);
+            var login_length = input.val().length;
+                
+		if(login_length > 3 && login_length <= 30){
+                    input.removeClass("invalid").addClass("valid");
+                    input.next('.komunikat').text("Wprowadzono poprawny login.<br>").removeClass("blad").addClass("ok");
+                            jQuery.ajax({
+                                url: "sprawdz_login.php",
+                                data:'login='+$("#login").val(),
+                                type: "POST",
+                                success:function(data){
+                                $("#user-availability-status").html(data);
+                                },
+                                error:function (){
+                                }
+                                });
+            
+		}
+		else{
+                    input.removeClass("valid").addClass("invalid");
+                    input.next('.komunikat').text("Login musi mieć więcej niż 3 i mniej niż 30 znaków!").removeClass("ok").addClass("blad");
+			
+		}
+	});
+	
+        $('#haslo').on('blur', function()
+            {
+            var input = $(this);
+            var haslo_length = input.val().length;
+
+                if(haslo_length >= 5 && haslo_length <=20){
+                    input.removeClass("invalid").addClass("valid");
+                    input.next('.komunikat').text("Hasło jest poprawnej długości.").removeClass("blad").addClass("ok");
+
+		}
+		else{
+                    input.removeClass("valid").addClass("invalid");
+                    input.next('.komunikat').text("Hasło musi mieć powyżej 4 znaków, a nie więcej jak 20!").removeClass("ok").addClass("blad");
+
+		}
+	});
+
+	$('#haslo2').on('blur', function(){
+            var input = $(this);
+            var haslo2 = document.getElementById('haslo2').value;
+            var haslo = document.getElementById('haslo').value;
+
+
+                if(haslo2 == haslo){
+                    input.removeClass("invalid").addClass("valid");
+                    input.next('.komunikat').text("Hasło jest zgodne.").removeClass("blad").addClass("ok");
+
+                    }
+                else{
+                    input.removeClass("valid").addClass("invalid");
+                    input.next('.komunikat').text("Hasło musi być takie samo jak wyżej!").removeClass("ok").addClass("blad");
+
+                    }
+	});
+	
+	$('#imie').on('blur', function() {
+            var input = $(this);
+            var imie_length = input.val().length;
+		if(imie_length >= 4 && imie_length <= 15){
+			input.removeClass("invalid").addClass("valid");
+			input.next('.komunikat').text("Wprowadzono poprawną nazwę.").removeClass("blad").addClass("ok");
+		}
+		else{
+			input.removeClass("valid").addClass("invalid");
+			input.next('.komunikat').text("Nazwa musi mieć więcej niż 3 i mniej niż 16 znaków!").removeClass("ok").addClass("blad");
+			
+		}
+	});
+	
+	$('#nazwisko').on('blur', function() {
+            var input = $(this);
+            var nazwisko_length = input.val().length;
+		if(nazwisko_length >= 2 && nazwisko_length <= 20){
+			input.removeClass("invalid").addClass("valid");
+			input.next('.komunikat').text("Wprowadzono poprawną nazwę.").removeClass("blad").addClass("ok");
+		}
+		else{
+			input.removeClass("valid").addClass("invalid");
+			input.next('.komunikat').text("Nazwa musi mieć więcej niż 2 i mniej niż 21 znaków!").removeClass("ok").addClass("blad");
+			
+		}
+	});
+	
+	
+	$('#email').on('blur', function() {
+            var input = $(this);
+            var pattern = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+            var is_email = pattern.test(input.val());
+		if(is_email){
+			input.removeClass("invalid").addClass("valid");
+			input.next('.komunikat').text("Wprowadzono poprawny email.").removeClass("blad").addClass("ok");
+                           jQuery.ajax({
+                                url: "sprawdz_login.php",
+                                data:'email='+$("#email").val(),
+                                type: "POST",
+                                success:function(data){
+                                $("#email-availability-status").html(data);
+                                },
+                                error:function (){
+                                }
+        });
+		}
+		else{
+			input.removeClass("valid").addClass("invalid");
+			input.next('.komunikat').text("Wprowadź poprawny email!").removeClass("ok").addClass("blad");
+		}
+	});	
+	
+	$('#submit').click(function(event){
+            var login = $('#login');
+            var imie = $('#imie');
+            var nazwisko = $('#nazwisko');
+            var email = $('#email');
+			
+			
+			
+                if(login.hasClass('valid') && email.hasClass('valid') && imie.hasClass('valid') && nazwisko.hasClass('valid')){
+				alert("Pomyślnie wysłano formularz.");	
+                }
+                else {
+				event.preventDefault();
+				alert("Uzupełnij wszystkie pola poprawnie!");	
+		}
+	});
+});
+</script>
+
+<hr />
+<div class="container">
+<p class="footer"><center>Prawa autorskie by BaD<hr /></center></p>
+</div>
+        
+    </body>
+</html>

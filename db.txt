@@ -1,0 +1,63 @@
+CREATE TABLE users (
+  id INT NOT NULL AUTO_INCREMENT,
+  data_utworzenia DATE NOT NULL,
+  imie VARCHAR(30) NOT NULL,
+  nazwisko VARCHAR(30) NOT NULL,
+  adres VARCHAR(50) NOT NULL,
+  telefon INT(12) NOT NULL,
+  data_urodzenia DATE NOT NULL,
+  email VARCHAR(80) NOT NULL,
+  login VARCHAR(30) NOT NULL,
+  haslo VARCHAR(41) NOT NULL,
+  aktywne INT(1) NOT NULL default 0,
+  kod INT NOT NULL default '0',
+  zdjecie MEDIUMBLOB NOT NULL,
+  PRIMARY KEY (id),
+  UNIQUE INDEX (email)
+) ENGINE=INNODB;
+
+CREATE TABLE dod_dane (
+  id INT NOT NULL AUTO_INCREMENT,
+  id_users INT NOT NULL,
+  adres VARCHAR(50) NOT NULL,
+  telefon INT(12) NOT NULL,
+  PRIMARY KEY (id)
+) ENGINE=INNODB;
+
+
+users
+	1	id	int(11)			Nie	None	AUTO_INCREMENT	 Zmieñ	 Usuñ	Wiêcej Show more actions
+	2	data_utworzenia	date			Nie	None		 Zmieñ	 Usuñ	Wiêcej Show more actions
+	3	imie	varchar(30)	utf8_polish_ci		Nie	None		 Zmieñ	 Usuñ	Wiêcej Show more actions
+	4	nazwisko	varchar(30)	utf8_polish_ci		Nie	None		 Zmieñ	 Usuñ	Wiêcej Show more actions
+	5	data_urodzenia	date			Nie	None		 Zmieñ	 Usuñ	Wiêcej Show more actions
+	6	email	varchar(80)	utf8_polish_ci		Nie	None		 Zmieñ	 Usuñ	Wiêcej Show more actions
+	7	login	varchar(30)	utf8_polish_ci		Nie	None		 Zmieñ	 Usuñ	Wiêcej Show more actions
+	8	haslo	varchar(41)	utf8_polish_ci		Nie	None		 Zmieñ	 Usuñ	Wiêcej Show more actions
+	9	aktywne	int(1)			Nie	0		 Zmieñ	 Usuñ	Wiêcej Show more actions
+	10	kod	int(11)			Nie	0		 Zmieñ	 Usuñ	Wiêcej Show more actions
+	11	zdjecie	blob
+
+menu
+
+	1	id	int(11)			Nie	None	AUTO_INCREMENT	 Zmieñ	 Usuñ	Wiêcej Show more actions
+	2	data_utworzenia	date			Nie	None		 Zmieñ	 Usuñ	Wiêcej Show more actions
+	3	nazwa	varchar(30)	utf8_polish_ci		Nie	None		 Zmieñ	 Usuñ	Wiêcej Show more actions
+	4	skladniki	varchar(200)	utf8_polish_ci		Tak	NULL		 Zmieñ	 Usuñ	Wiêcej Show more actions
+	5	zdjecie	mediumblob		BINARY	Nie	None		 Zmieñ	 Usuñ	Wiêcej Show more actions
+	6	cena	int(11)			Nie	20	
+
+
+zamowienia
+
+	1	id	int(11)			Nie	None	AUTO_INCREMENT	 Zmieñ	 Usuñ	Wiêcej Show more actions
+	2	data_utworzenia	date			Nie	None		 Zmieñ	 Usuñ	Wiêcej Show more actions
+	3	id_users	int(11)			Nie	None		 Zmieñ	 Usuñ	Wiêcej Show more actions
+	4	id_menu	int(11)			Nie	None		 Zmieñ	 Usuñ	Wiêcej Show more actions
+	5	status	int(1)			Nie	0	
+	
+
+	Dzia³anie	Nazwa klucza	Typ	Jednoznaczny	Spakowany	Kolumna	Moc	Metoda porównywania napisów	Null	Komentarz
+	Edytuj	Usuñ	PRIMARY	BTREE	Tak	Nie	id	5	A		
+	Edytuj	Usuñ	id_users	BTREE	Nie	Nie	id_users	5	A		
+	Edytuj	Usuñ	id_menu	BTREE	Nie	Nie	id_menu	5	A		

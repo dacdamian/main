@@ -1,0 +1,22 @@
+2017-06-22 | 02:19:21pm - Blad podczas logowania do systemu na konto informatyk
+2017-06-22 | 02:20:33pm - Blad podczas logowania do systemu na konto : informatyk
+2017-06-22 | 02:35:11pm - Blad podczas logowania do systemu na konto : informatyk
+2017-06-23 | 09:51:55am - Blad podczas logowania do systemu na konto : informatyk --\'
+2017-06-23 | 09:54:06am - Blad podczas logowania do systemu na konto : aaa
+2017-06-23 | 09:56:46am - Blad podczas logowania do systemu na konto : \' OR login=\'informatyk\' --
+2017-06-27 | 07:48:44am - Blad podczas logowania do systemu na konto : damian
+2017-06-27 | 09:19:36am - Blad podczas logowania do systemu na konto : damian
+2017-06-27 | 10:31:23am - Blad podczas logowania do systemu na konto : damian
+2017-06-27 | 10:41:18am - Blad podczas logowania do systemu na konto : damian
+2017-06-27 | 10:41:23am - Blad podczas logowania do systemu na konto : damian
+2017-06-28 | 11:47:18am - Blad podczas logowania do systemu na konto : damian
+2017-06-28 | 12:15:08pm - Blad podczas logowania do systemu na konto : informatyk
+2017-06-28 | 12:15:13pm - Blad podczas logowania do systemu na konto : informatyk
+2017-06-28 | 01:12:03pm - Blad podczas logowania do systemu na konto : informatyk
+2017-06-28 | 02:09:01pm - Blad podczas logowania do systemu na konto : damian
+2017-06-28 | 02:09:06pm - Blad podczas logowania do systemu na konto : damian
+2017-06-29 | 08:52:07am - Blad podczas logowania do systemu na konto : damian12
+2017-06-29 | 01:42:09pm - Blad podczas logowania do systemu na konto : badd
+2017-06-30 | 08:24:35am - Blad podczas logowania do systemu na konto : informatyk
+2017-06-30 | 09:50:51am - Blad podczas logowania do systemu na konto : informatyk
+2017-07-10 | 07:16:49am - Blad podczas logowania do systemu na konto : informatyk
